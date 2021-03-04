@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H3>DATA TEST</H3>
+    <ul id="targetId">
+    </ul>
+
+
+<script>
+    
+const getBVN = (req, res, next) => {
+    Request.post(
+    'https://sandboxapi.fsi.ng/nibss/Reset',
+    (err, result) => {
+        if(err){
+            throw err
+        }
+    nibss.Bvnr.Reset({
+        sandbox_key: "665b40b6600a3c55e9b4007ccec5079c",
+        organisation_code: "MTExMTE=" 
+
+    }).then(response => {
+        res.status(200).json({
+            response,
+            message: "Data recieved"
+        })
+    }).catch(err => {
+        res.json(err)
+    })
+    })
+}
+
+ 
+
+</script>
+</body>
+</html>
